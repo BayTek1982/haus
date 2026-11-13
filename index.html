@@ -771,7 +771,7 @@ function fahre(k){
   const z=KAM[k]; flug={t0:performance.now(), dur:1100,
     p0:camera.position.clone(), p1:new THREE.Vector3(...z.p), q0:controls.target.clone(), q1:new THREE.Vector3(...z.t)};
 }
-document.querySelectorAll('#kams button').forEach(b=>b.onclick=()=>fahre(b.dataset.k));
+document.querySelectorAll('#kams button[data-k]').forEach(b=>b.onclick=()=>fahre(b.dataset.k));
 
 function setzeSonne(h){
   const A=(180+(h-13.25)*15)*Math.PI/180;
