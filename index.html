@@ -616,8 +616,8 @@ const TEX_LAERCHE = canvasTex(256,256,(g,w,h)=>{ // 1 m x 1 m Rhombusleisten
   flaeche(TER.x0,TER.x1,-TER.tief-0.4,-TER.tief,0.016,TEX.kies,1,s);
   flaeche(GW,GW+0.4,GS+RE,GN,0.016,TEX.kies,1,s); flaeche(GW+RE,ZX,GS,GS+0.4,0.016,TEX.kies,1,s);
   // Beet an der Südwest-Ecke (Erde mit Pflanzen)
-  B(-1.2,0,0,0.06,-TER.tief-0.4,-1.2,M.beton,s); flaeche(-1.1,-0.1,-TER.tief-0.3,-1.3,0.062,TEX.erde,1,s);
-  B(-1.36,-1.2,0,0.04,-TER.tief-0.4,3.1,granit,s,true); B(-2.6,-1.36,0,0.04,2.94,3.1,granit,s,true); // Randstein vom Westbeet bis zum Beet an der Terrasse
+  B(-1.2,0,0,0.06,-TER.tief,-1.2,M.beton,s); flaeche(-1.1,-0.1,-TER.tief+0.1,-1.3,0.062,TEX.erde,1,s);
+  flaeche(-1.6,-1.2,-TER.tief-0.4,2.8,0.016,TEX.kies,1,s); flaeche(-2.2,-1.2,2.8,3.1,0.017,TEX.kies,1,s); flaeche(-1.2,0,-TER.tief-0.4,-TER.tief,0.016,TEX.kies,1,s); // graue Rasenkante (Kies) vom Westbeet bis zur Terrasse
   // Westseite: Gehweg, Hecke, Kies, Rasen
   flaeche(-2.2,-1.2,3.1,9.0,0.016,TEX.erde,1,s); flaeche(-2.6,-2.2,2.8,9.0,0.017,TEX.kies,1,s);
   // Nordseite: Gehweg, Hecke bis zur Grenze
@@ -643,7 +643,7 @@ const TEX_LAERCHE = canvasTex(256,256,(g,w,h)=>{ // 1 m x 1 m Rhombusleisten
   const halm=(x,n,h0)=>{ const m=new THREE.Mesh(new THREE.ConeGeometry(0.32,1.7,7),M.gras); m.position.set(x,h0+0.85,-n); m.castShadow=true; s.add(m); };
   halm(10.42,-3.35,0.45); halm(10.42,-2.55,0.45); halm(10.42,-1.75,0.45);           // Gräser im Hochbeet
   busch(10.42,-2.95,0.3,M.laubHell,0.45); busch(10.42,-2.15,0.3,M.laubHell,0.45);
-  busch(-0.6,-1.8,0.33,M.laubHell); busch(-0.6,-2.8,0.3,M.laub); busch(-0.6,-3.8,0.33,M.laubHell); // Beet SW
+  busch(-0.6,-1.8,0.33,M.laubHell); busch(-0.6,-2.6,0.3,M.laub); busch(-0.6,-3.4,0.33,M.laubHell); // Beet SW
   // Bäume an der Straße
   const baum=(x,n,h,r)=>{ rod([x,0,n],[x,h*0.55,n],0.06,M.stamm,s,6); const k=new THREE.Mesh(new THREE.IcosahedronGeometry(r,1),M.laubHell); k.position.set(x,h*0.7,-n); k.castShadow=true; s.add(k); };
   baum(GW-1.6,10,5,1.3); baum(GW-1.6,-2,5,1.2); baum(4,GS-1.2,4.5,1.1);
