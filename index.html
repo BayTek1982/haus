@@ -466,11 +466,11 @@ B(10.12,10.17,0.08,2.43,0.45,1.39,M.weiss,G.moebelEG); B(10.155,10.16,0.1,2.43,1
 B(6.6,9.6,0.1,0.88,4.07,4.66,M.weiss,G.moebelEG); B(6.6,9.6,0.88,0.92,4.04,4.68,kAP,G.moebelEG); B(6.65,9.55,0,0.1,4.12,4.6,M.alu,G.moebelEG);
 B(7.8,8.4,0.92,0.925,4.13,4.53,M.anthrazit,G.moebelEG,true); rod([8.1,0.92,4.58],[8.1,1.28,4.58],0.018,M.anthrazit,G.moebelEG,10);
 (function(){ const bo=new THREE.Mesh(new THREE.TorusGeometry(0.11,0.016,8,20,Math.PI),M.anthrazit); bo.rotation.y=Math.PI/2; bo.position.set(8.1,1.28,-4.47); bo.castShadow=true; G.moebelEG.add(bo); rod([8.1,1.28,4.36],[8.1,1.2,4.36],0.016,M.anthrazit,G.moebelEG,10); B(8.08,8.12,1.0,1.1,4.6,4.66,M.anthrazit,G.moebelEG,true); })(); // Spüle mittig + schwarze Bogenarmatur
-B(6.55,9.65,1.0,2.05,4.66,4.68,new THREE.MeshStandardMaterial({color:0xd5dde2,roughness:.08,metalness:.35}),G.moebelEG,true); [7.4,8.8].forEach(x=>B(x-0.04,x+0.04,1.35,1.65,4.6,4.66,M.anthrazit,G.moebelEG,true)); // Spiegel + 2 Wandleuchten
+B(6.55,9.65,1.0,2.05,4.66,4.68,new THREE.MeshStandardMaterial({color:0xd5dde2,roughness:.08,metalness:.35}),G.moebelEG,true); [6.95,9.25].forEach(x=>B(x-0.04,x+0.04,1.35,1.65,4.6,4.66,M.anthrazit,G.moebelEG,true)); // Spiegel + 2 Wandleuchten
 B(6.8,9.3,0.1,0.88,1.98,2.72,M.weiss,G.moebelEG); B(6.75,9.35,0.88,0.92,1.62,2.75,kAP,G.moebelEG); B(6.9,9.2,0,0.1,2.05,2.65,M.alu,G.moebelEG);
 B(6.75,6.8,0,0.88,1.64,2.75,M.weiss,G.moebelEG); B(9.3,9.35,0,0.88,1.64,2.75,M.weiss,G.moebelEG); // Wangen + Theke nach Süden
 B(6.82,9.28,0.49,0.495,2.72,2.725,M.anthrazit,G.moebelEG,true); [7.62,8.45].forEach(x=>B(x,x+0.005,0.12,0.86,2.72,2.725,M.anthrazit,G.moebelEG,true)); // Schubladenfugen der Insel
-B(7.65,8.45,0.92,0.925,2.15,2.6,M.anthrazit,G.moebelEG,true); B(7.75,8.35,0.925,0.93,2.33,2.4,M.alu,G.moebelEG,true); // Kochfeld mittig mit Muldenlüfter
+B(7.65,8.45,0.92,0.925,2.15,2.6,M.anthrazit,G.moebelEG,true); B(8.015,8.085,0.925,0.93,2.18,2.57,M.alu,G.moebelEG,true); // Kochfeld mittig, Muldenlüfter quer
 (function(){ const led=new THREE.MeshStandardMaterial({color:0x1b1c1e,roughness:.45,side:THREE.DoubleSide}), chr=new THREE.MeshStandardMaterial({color:0xc9ced3,roughness:.25,metalness:.8});
   [7.35,8.05,8.75].forEach(x=>{ const g=new THREE.Group(); g.position.set(x,0,-1.3);
     const fuss=new THREE.Mesh(new THREE.CylinderGeometry(0.21,0.22,0.025,28),chr); fuss.position.y=0.0125; const saeule=new THREE.Mesh(new THREE.CylinderGeometry(0.028,0.028,0.56,12),chr); saeule.position.y=0.3;
@@ -479,10 +479,10 @@ B(7.65,8.45,0.92,0.925,2.15,2.6,M.anthrazit,G.moebelEG,true); B(7.75,8.35,0.925,
 B(7.45,8.65,2.71,2.75,2.17,2.23,M.anthrazit,G.moebelEG,true);
 [7.65,8.05,8.45].forEach(x=>{ rod([x,1.95,2.2],[x,2.71,2.2],0.005,M.anthrazit,G.moebelEG,4); const k=new THREE.Mesh(new THREE.SphereGeometry(0.15,20,14),new THREE.MeshStandardMaterial({color:0xb9bec3,roughness:.15,metalness:.85})); k.position.set(x,1.82,-2.2); G.moebelEG.add(k); });
 // Esstisch quer (Ost-West) mit 8 Stühlen
-B(1.4,3.8,0.72,0.76,2.28,3.28,M.holz,G.moebelEG);
-[[1.5,2.36],[3.7,2.36],[1.5,3.2],[3.7,3.2]].forEach(p=>B(p[0]-0.03,p[0]+0.03,0,0.72,p[1]-0.03,p[1]+0.03,M.anthrazit,G.moebelEG,true));
-[1.7,2.3,2.9,3.5].forEach(x=>{ B(x-0.22,x+0.22,0,0.46,1.75,2.15,M.anthrazit,G.moebelEG); B(x-0.22,x+0.22,0.46,0.9,1.75,1.8,M.anthrazit,G.moebelEG);
-  B(x-0.22,x+0.22,0,0.46,3.41,3.81,M.anthrazit,G.moebelEG); B(x-0.22,x+0.22,0.46,0.9,3.76,3.81,M.anthrazit,G.moebelEG); });
+B(1.4,3.8,0.72,0.76,1.58,2.58,M.holz,G.moebelEG);
+[[1.5,1.66],[3.7,1.66],[1.5,2.5],[3.7,2.5]].forEach(p=>B(p[0]-0.03,p[0]+0.03,0,0.72,p[1]-0.03,p[1]+0.03,M.anthrazit,G.moebelEG,true));
+[1.7,2.3,2.9,3.5].forEach(x=>{ B(x-0.22,x+0.22,0,0.46,1.05,1.45,M.anthrazit,G.moebelEG); B(x-0.22,x+0.22,0.46,0.9,1.05,1.1,M.anthrazit,G.moebelEG);
+  B(x-0.22,x+0.22,0,0.46,2.71,3.11,M.anthrazit,G.moebelEG); B(x-0.22,x+0.22,0.46,0.9,3.06,3.11,M.anthrazit,G.moebelEG); });
 // Weißes Leder-Ecksofa: langer Teil an der Westwand, Ecke nach Osten; davor Hochflor-Teppich; TV an der Wand zum Arbeitszimmer
 B(0.45,1.4,0,0.42,5.1,8.7,M.sofaW,G.moebelEG); B(0.45,0.7,0.42,0.82,5.1,8.7,M.sofaW,G.moebelEG);
 B(1.4,3.45,0,0.42,5.1,6.05,M.sofaW,G.moebelEG); B(1.4,3.45,0.42,0.82,5.1,5.35,M.sofaW,G.moebelEG); B(3.25,3.45,0.42,0.62,5.35,6.05,M.sofaW,G.moebelEG);
